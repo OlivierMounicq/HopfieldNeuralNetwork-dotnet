@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopfieldNetwork", "HopfieldNetwork\HopfieldNetwork.csproj", "{8AAAF507-1AC7-412E-BEB1-0547F6806D2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HopfieldNetworkTesting", "HopfieldNetworkTesting\HopfieldNetworkTesting.csproj", "{F4EA821D-8D28-4FB3-8EF7-2547890C7907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AAAF507-1AC7-412E-BEB1-0547F6806D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAAF507-1AC7-412E-BEB1-0547F6806D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAAF507-1AC7-412E-BEB1-0547F6806D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAAF507-1AC7-412E-BEB1-0547F6806D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EA821D-8D28-4FB3-8EF7-2547890C7907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EA821D-8D28-4FB3-8EF7-2547890C7907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EA821D-8D28-4FB3-8EF7-2547890C7907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EA821D-8D28-4FB3-8EF7-2547890C7907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
