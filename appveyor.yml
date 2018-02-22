@@ -1,8 +1,8 @@
 # Build + test + package +publish
 install:
-  - ps: Install-Package coveralls.io -Version 1.4.2
-  - ps: Install-Package OpenCover -Version 4.6.519
-
+  - ps: Install-Package coveralls.io 
+  - ps: Install-Package OpenCover 
+  
 build:
   project: HopfieldNetwork.sln
   verbosity: detailed
