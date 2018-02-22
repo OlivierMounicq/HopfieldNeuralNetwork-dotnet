@@ -1,7 +1,7 @@
 # Build + test + package +publish
 install:
-  - nuget Install-Package coveralls.io -Version 1.4.2
-  - nuget Install-Package OpenCover -Version 4.6.519
+  - cmd: nuget Install-Package coveralls.io -Version 1.4.2
+  - cmd: nuget Install-Package OpenCover -Version 4.6.519
 
 build:
   project: HopfieldNetwork.sln
