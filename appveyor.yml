@@ -12,7 +12,7 @@ build:
   
 environment:
   COVERALLS_REPO_TOKEN:
-    secure: Xd4a6rSs3WWmqQBSlhfckBIp7KJUssXKsuLL7mHuMQsN9zSitiCamCj5M3JLErbR
+    secure: 6Gx3oaDRdtMkwt+eH52ng0d2TMiVApoEmbt12R7Y5OaTT+K6dw65OY4JgbRhqEh6
     
 after_test: 
 # generate report for NUnit testing framework:
