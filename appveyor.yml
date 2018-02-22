@@ -1,5 +1,5 @@
 # Build + test + package +publish
-install
+install:
   - nuget Install-Package coveralls.io -Version 1.4.2
   - nuget Install-Package OpenCover -Version 4.6.519
 
