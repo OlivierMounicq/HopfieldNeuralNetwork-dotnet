@@ -1,6 +1,7 @@
 # Build + test + package +publish
 install:
-  - ps: Install-Package coveralls.io 
+#  - ps: Install-Package coveralls.io
+  - nuget install coveralls.io 
   - ps: Install-Package OpenCover 
   
 build:
