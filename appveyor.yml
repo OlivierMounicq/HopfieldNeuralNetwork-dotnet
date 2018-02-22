@@ -1,0 +1,5 @@
+# Build + test + package +publish
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: Xd4a6rSs3WWmqQBSlhfckBIp7KJUssXKsuLL7mHuMQsN9zSitiCamCj5M3JLErbR
+
