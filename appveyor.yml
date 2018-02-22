@@ -1,9 +1,6 @@
 # Build + test + package +publish
 image: Visual Studio 2015
 
-install:
-  -ps : "ls -recurse"
-
 before_build:
   - cmd: nuget restore
 
