@@ -1,6 +1,9 @@
 # Build + test + package +publish
 image: Visual Studio 2015
-  
+
+before_build:
+  - cmd: nuget restore
+
 build:
   project: HopfieldNetwork.sln
   verbosity: detailed
