@@ -2,4 +2,8 @@
 [![Tests Status](https://img.shields.io/appveyor/tests/OlivierMounicq/hopfieldneuralnetwork-dotnet.svg?logo=appveyor)](https://ci.appveyor.com/project/OlivierMounicq/hopfieldneuralnetwork-dotnet/build/tests)
 [![Coverage Status](https://coveralls.io/repos/github/OlivierMounicq/HopfieldNeuralNetwork-dotnet/badge.svg?branch=master)](https://coveralls.io/github/OlivierMounicq/HopfieldNeuralNetwork-dotnet?branch=master)
 
+
+![alt text](https://coveralls.io/repos/github/OlivierMounicq/HopfieldNeuralNetwork-dotnet/badge.svg?branch=master "Logo Title Text 1")
+
+
 # HopfieldNeuralNetwork-dotnet
