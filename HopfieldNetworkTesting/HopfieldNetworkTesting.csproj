@@ -50,16 +50,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Helpers.cs" />
-    <Compile Include="MatrixTest.cs" />
+    <Compile Include="Mathematics\ColumnVectorTest.cs" />
+    <Compile Include="Mathematics\Helpers.cs" />
+    <Compile Include="Mathematics\MatrixTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VectorTest.cs" />
+    <Compile Include="Mathematics\RowVectorTest.cs" />
+    <Compile Include="Mathematics\VectorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HopfieldNetwork\HopfieldNetwork.csproj">
       <Project>{8aaaf507-1ac7-412e-beb1-0547f6806d2f}</Project>
       <Name>HopfieldNetwork</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

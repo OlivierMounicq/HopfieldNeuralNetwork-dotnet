@@ -26,6 +26,15 @@ namespace HopfieldNetwork.Mathematics
             }
         }
 
+        public Vector(Vector v)
+        {
+            this.vector = new double[v.Length];
+
+            for(var idx = 0; idx < v.Length; idx++)
+            {
+                this.vector[idx] = v[idx];
+            }
+        }
 
         public Vector(int length)
         {
@@ -35,51 +44,6 @@ namespace HopfieldNetwork.Mathematics
         public Vector(double[] vector)
         {
             this.vector = vector;
-        }
-                    
-        private Matrix Multiply(Vector v)
-        {
-            if(this.Length != v.Length)
-            {
-                throw new MultiplicationVectorDimensionException(this, v);
-            }
-
-            var matrix = new Matrix(this.Length, this.Length);
-
-            for(var idxRow = 0; idxRow < this.Length; idxRow++)
-            {
-                for(var idxCol = 0; idxCol < v.Length; idxCol++)
-                {
-                    matrix[idxRow, idxCol] = this[idxRow] * v[idxCol];
-                }                
-            }
-
-            return matrix;
-        }
-
-
-        public static Matrix operator *(Vector v1, Vector v2)
-        {
-            return v1.Multiply(v2);
-        }
-
-        public double ScalarProduct(Vector v1, Vector v2)
-        {
-            if (v1.Length != v2.Length)
-            {
-                throw new MultiplicationVectorDimensionException(v1,v2);
-            }
-
-            double result = 0;
-
-            for(var idx = 0; idx < v1.Length; idx++)
-            {
-                result += v1[idx] * v2[idx];
-            }
-
-            return result;
-        }
-
-
+        }                            
     }
 }

@@ -120,6 +120,47 @@ namespace HopfieldNetwork.Mathematics
             return res;
         }
 
+        private Vector MultiplyMatrixByColumnVector(Vector v)
+        {
+            if(this.ColumnQuantity != v.Length)
+            {
+                throw new MultiplicationMatrixByVectorDimensionException(string.Format("We cannot multiply the matrix by a row vector. The matrix has {0} columns and the vector has {1} rows", this.ColumnQuantity, v.Length));
+            }
+
+            var resultVector = new Vector(this.rowQuantity);
+
+            for(var idxMatrixRow = 0; idxMatrixRow < this.rowQuantity; idxMatrixRow++)
+            {
+                for(var idxCol = 0; idxCol < this.columnQuantity; idxCol++)
+                {
+                    resultVector[idxMatrixRow] += this[idxMatrixRow, idxCol] * v[idxCol];
+                }
+            }
+
+            return resultVector;
+        }
+
+        private Vector MultiplyRowVectorByMatrix(Vector v)
+        {
+            if (this.RowQuantity != v.Length)
+            {
+                throw new MultiplicationMatrixByVectorDimensionException(string.Format("We cannot multiply the matrix by a row vector. The matrix has {0} columns and the vector has {1} columns", this.RowQuantity, v.Length));
+            }
+
+            var resultVector = new Vector(this.ColumnQuantity);
+
+            for(var idxMatrixCol = 0; idxMatrixCol < this.ColumnQuantity; idxMatrixCol++)
+            {
+                for (var idxCol = 0; idxCol < v.Length; idxCol++)
+                {
+                    resultVector[idxMatrixCol] += v[idxCol] * this[idxCol, idxMatrixCol];
+                }
+            }
+
+            return resultVector;
+        }
+
+
         public static Matrix operator +(Matrix m1, Matrix m2)
         {
             return m1.Add(m2);
@@ -129,5 +170,17 @@ namespace HopfieldNetwork.Mathematics
         {
             return m1.Multiply(m2);
         }
+
+        public static ColumnVector operator *(Matrix m, ColumnVector v)
+        {
+            return new ColumnVector(m.MultiplyMatrixByColumnVector(v));
+        }
+
+        public static RowVector operator *(RowVector v, Matrix m)
+        {
+            return new RowVector(m.MultiplyRowVectorByMatrix(v));
+        }
+
+
     }
 }

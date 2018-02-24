@@ -43,7 +43,10 @@
     <Compile Include="Exceptions\AdditionDimensionException.cs" />
     <Compile Include="Exceptions\DimensionException.cs" />
     <Compile Include="Exceptions\MultiplicationDimensionException.cs" />
+    <Compile Include="Exceptions\MultiplicationMatrixByVectorDimensionException.cs" />
     <Compile Include="Exceptions\MultiplicationVectorDimensionException.cs" />
+    <Compile Include="Mathematics\ColumnVector.cs" />
+    <Compile Include="Mathematics\RowVector.cs" />
     <Compile Include="Mathematics\Vector.cs" />
     <Compile Include="Mathematics\Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
