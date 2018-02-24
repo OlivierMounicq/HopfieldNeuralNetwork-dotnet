@@ -1,3 +1,19 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 1.0.{build}
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - master
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+
 # Build + test + package +publish
 image: Visual Studio 2015
 
@@ -7,11 +23,15 @@ before_build:
 build:
   project: HopfieldNetwork.sln
   verbosity: detailed
-  
+
+# environment variables
 environment:
   COVERALLS_REPO_TOKEN:
     secure: 6Gx3oaDRdtMkwt+eH52ng0d2TMiVApoEmbt12R7Y5OaTT+K6dw65OY4JgbRhqEh6
     
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#    
 after_test:     
 # generate report for MSTest testing framework:
    - cmd :
