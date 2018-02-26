@@ -67,6 +67,30 @@ namespace HopfieldNetworkTesting.Mathematics
             var scalarProduct = v1 * v2;
         }
 
+
+        [TestMethod]
+        public void MultiplicationRowVectorByColumnVectorTest()
+        {
+            var v1 = new RowVector(new double[] { 1, 2, 3, 4 });
+            var v2 = new ColumnVector(new double[] { 5, 6, 7, 8 });
+
+            var expectedResult = 70;
+
+            var scalarProduct = v1 * v2;
+
+            Assert.AreEqual(expectedResult, scalarProduct);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MultiplicationVectorDimensionException), "The vector have not the same length ( length of V1 : 4, length of V2 : 5 )")]
+        public void MultiplicationRowVectorByColumnVectorExceptionTest()
+        {
+            var v1 = new RowVector(new double[] { 1, 2, 3, 4 });
+            var v2 = new ColumnVector(new double[] { 5, 6, 7, 8, 9 });
+
+            var scalarProduct = v1 * v2;
+        }
+
         [TestMethod]
         public void TransposeTest()
         {

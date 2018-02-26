@@ -53,6 +53,7 @@
     <Compile Include="Mathematics\ColumnVectorTest.cs" />
     <Compile Include="Mathematics\Helpers.cs" />
     <Compile Include="Mathematics\MatrixTest.cs" />
+    <Compile Include="Memory\PatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mathematics\RowVectorTest.cs" />
     <Compile Include="Mathematics\VectorTest.cs" />

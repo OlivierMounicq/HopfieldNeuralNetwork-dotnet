@@ -20,6 +20,11 @@ namespace HopfieldNetwork.Mathematics
             set { matrix[i, j] = value; }
         }
 
+        public double[,] NestedArray
+        {
+            get { return this.matrix; }
+        }
+            
         public int RowQuantity { get { return rowQuantity; } }
 
         public int ColumnQuantity { get { return columnQuantity; } }
@@ -31,11 +36,43 @@ namespace HopfieldNetwork.Mathematics
             this.columnQuantity = columnQuantity;
         }
 
-        public Matrix(double[,] matrix)
+        public Matrix(double[,] matrix, bool cloneNestedMatrix)
+        {            
+            this.rowQuantity = (int)matrix.GetLongLength(0);
+            this.columnQuantity = (int)matrix.GetLongLength(1);
+
+            if(cloneNestedMatrix)
+            {
+                this.matrix = new double[this.rowQuantity, this.ColumnQuantity];
+
+                for (var idxRow = 0; idxRow < this.RowQuantity; idxRow++)
+                {
+                    for (var idxCol = 0; idxCol < this.ColumnQuantity; idxCol++)
+                    {
+                        this.matrix[idxRow, idxCol] = matrix[idxRow, idxCol];
+                    }
+                }
+            }
+            else
+            {
+                this.matrix = matrix;
+            }
+        }
+
+
+        public Matrix Clone()
         {
-            this.matrix = matrix;
-            this.rowQuantity = (int)this.matrix.GetLongLength(0);
-            this.columnQuantity = (int)this.matrix.GetLongLength(1);
+            var matrix = new Matrix(this.rowQuantity, this.ColumnQuantity);
+
+            for (var idxRow = 0; idxRow < this.RowQuantity; idxRow++)
+            {
+                for (var idxCol = 0; idxCol < this.ColumnQuantity; idxCol++)
+                {
+                    matrix[idxRow, idxCol] = this[idxRow, idxCol];
+                }
+            }
+
+            return matrix;
         }
 
         public void Initialize()
@@ -90,6 +127,26 @@ namespace HopfieldNetwork.Mathematics
                 for (var j = 0; j < columnQuantity; j++)
                 {
                     res[i, j] = this.matrix[i, j] + m[i, j];
+                }
+            }
+
+            return res;
+        }
+
+        private Matrix Subtract(Matrix m)
+        {
+            if (this.rowQuantity != m.rowQuantity || this.columnQuantity != m.ColumnQuantity)
+            {
+                throw new AdditionDimensionException(this, m);
+            }
+
+            var res = new Matrix(this.rowQuantity, this.columnQuantity);
+
+            for (var i = 0; i < rowQuantity; i++)
+            {
+                for (var j = 0; j < columnQuantity; j++)
+                {
+                    res[i, j] = this.matrix[i, j] - m[i, j];
                 }
             }
 
@@ -166,6 +223,11 @@ namespace HopfieldNetwork.Mathematics
             return m1.Add(m2);
         }
 
+        public static Matrix operator -(Matrix m1, Matrix m2)
+        {
+            return m1.Subtract(m2);
+        }
+
         public static Matrix operator *(Matrix m1, Matrix m2)
         {
             return m1.Multiply(m2);
@@ -180,7 +242,5 @@ namespace HopfieldNetwork.Mathematics
         {
             return new RowVector(m.MultiplyRowVectorByMatrix(v));
         }
-
-
     }
 }

@@ -43,5 +43,22 @@ namespace HopfieldNetwork.Mathematics
 
             return result;
         }
+
+        public static double operator *(RowVector v1, ColumnVector v2)
+        {
+            if (v1.Length != v2.Length)
+            {
+                throw new MultiplicationVectorDimensionException(v1, v2);
+            }
+
+            double result = 0;
+
+            for (var idx = 0; idx < v1.Length; idx++)
+            {
+                result += v1[idx] * v2[idx];
+            }
+
+            return result;
+        }
     }
 }
