@@ -36,6 +36,22 @@ namespace HopfieldNetwork.Mathematics
             this.columnQuantity = columnQuantity;
         }
 
+        public Matrix(Matrix m)
+        {
+            this.rowQuantity = m.RowQuantity;
+            this.columnQuantity = m.ColumnQuantity;
+            this.matrix = new double[this.rowQuantity, this.ColumnQuantity];
+
+            for (var idxRow = 0; idxRow < this.RowQuantity; idxRow++)
+            {
+                for (var idxCol = 0; idxCol < this.ColumnQuantity; idxCol++)
+                {
+                    this.matrix[idxRow, idxCol] = m[idxRow, idxCol];
+                }
+            }
+
+        }
+
         public Matrix(double[,] matrix, bool cloneNestedMatrix)
         {            
             this.rowQuantity = (int)matrix.GetLongLength(0);

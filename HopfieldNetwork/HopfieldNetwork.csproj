@@ -49,7 +49,7 @@
     <Compile Include="Mathematics\RowVector.cs" />
     <Compile Include="Mathematics\Vector.cs" />
     <Compile Include="Mathematics\Matrix.cs" />
-    <Compile Include="Memory\Memory.cs" />
+    <Compile Include="Memory\HopfieldMemory.cs" />
     <Compile Include="Memory\Pattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

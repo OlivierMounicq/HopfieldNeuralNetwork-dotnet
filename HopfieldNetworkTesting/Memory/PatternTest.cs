@@ -65,5 +65,15 @@ namespace HopfieldNetworkTesting.Memory
 
             Assert.IsTrue(isEqual);
         }
+
+        [TestMethod]
+        public void GetNewRandomPatternTest()
+        {
+            var pattern = new Pattern("A", new double[,] { { 1, 1, 1, 1, 1 }, { 1, -1, -1, -1, 1 }, { 1, 1, 1, 1, 1 }, { 1, -1, -1, -1, 1 }, { 1, -1, -1, -1, 1 } });
+            var modifiedPatern = pattern.GetNewRandomPattern("A");
+
+            var isDifferent = Helpers.AreEqualMatrix(pattern, modifiedPatern);
+            Assert.IsFalse(isDifferent);
+        }            
     }
 }
