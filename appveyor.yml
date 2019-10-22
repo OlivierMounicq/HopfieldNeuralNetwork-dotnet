@@ -43,4 +43,6 @@ after_test:
         
         type C:\projects\hopfieldneuralnetwork-dotnet\TestResults\appveyor_APPVYR-WIN*.trx
         
+        type C:\projects\hopfieldneuralnetwork-dotnet\coverage.xml
+        
  
