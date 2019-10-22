@@ -41,4 +41,6 @@ after_test:
         
         dir/b/s
         
+        type C:\projects\hopfieldneuralnetwork-dotnet\TestResults\appveyor_APPVYR-WIN*.trx
+        
  
