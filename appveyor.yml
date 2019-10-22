@@ -39,4 +39,6 @@ after_test:
  
         packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml -r %COVERALLS_REPO_TOKEN%
         
+        dir/b/s
+        
  
